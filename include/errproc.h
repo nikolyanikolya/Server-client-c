@@ -28,4 +28,7 @@ int recv_(int sockfd, void *buf, size_t len, int flags);
 int send_(int sockfd, const void *buf, size_t len, int flags);
 
 void set_values(const char * arg, struct sockaddr_in * addr, socklen_t *addr_len, int * server_port, int *socket);
+
+int getsockname_(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+
 #endif //VK_PROJECT_ERRPROC_H

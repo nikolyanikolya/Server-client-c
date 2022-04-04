@@ -48,7 +48,7 @@ int inet_pton_(int af, const char *src, void *dst){
 }
 int recv_(int sockfd, void *buf, size_t len, int flags){
     int res = recv(sockfd, buf, len, flags);
-    error_check(res, "Error occurred while receiving content from the client_dir: ", 0);
+    error_check(res, "Error occurred while receiving content from the client: ", 0);
     return res;
 }
 
@@ -66,3 +66,8 @@ void set_values(const char * arg, struct sockaddr_in * addr, socklen_t *addr_len
     *addr_len = sizeof (*addr);
 }
 
+int getsockname_(int sockfd, struct sockaddr *addr, socklen_t *addrlen){
+    int res = getsockname(sockfd, addr, addrlen);
+    error_check(res, "Error occurred while getting the socket name", 0);
+    return res;
+}
